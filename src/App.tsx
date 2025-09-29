@@ -186,22 +186,13 @@ export default function App() {
                   <div className="mx-auto mb-4 p-3 rounded-lg bg-primary/10 text-primary w-fit">
                     {feature.icon}
                   </div>
-                  {feature.description ? (
-                    <>
-                      <CardTitle className="text-lg text-red-600 mb-1">
-                        {feature.title}
-                      </CardTitle>
-                      <CardTitle className="text-base text-muted-foreground">
-                        {feature.description}
-                      </CardTitle>
-                    </>
-                  ) : (
-                    <CardTitle className="text-lg">{feature.title}</CardTitle>
-                  )}
+                  <CardTitle className="text-lg text-red-600 mb-1">
+                    {feature.title}
+                  </CardTitle>
+                  <CardTitle className="text-base text-muted-foreground">
+                    {feature.description}
+                  </CardTitle>
                 </CardHeader>
-                <CardContent>
-                  <CardDescription>{feature.description}</CardDescription>
-                </CardContent>
               </Card>
             ))}
           </div>
@@ -336,7 +327,7 @@ export default function App() {
             brings you customers while you sleep!
           </p>
 
-          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+          <div className="w-full max-w-2xl mx-auto">
             <Card className="p-8">
               <CardHeader>
                 <CardTitle className="flex items-center gap-3 text-foreground">
