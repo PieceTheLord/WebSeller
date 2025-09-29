@@ -22,6 +22,7 @@ import {
   Brain,
   Clock,
 } from "lucide-react";
+import modernBusinessWebsite from "./Screenshot 2025-09-29 195819.png";
 
 export default function App() {
   const portfolioItems = [
