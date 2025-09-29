@@ -30,29 +30,9 @@ export default function App() {
       title: "Modern Business Website",
       description:
         "Clean, professional design that converts visitors into customers",
-      image:
-        "https://images.unsplash.com/photo-1706700392626-5279fb90ae73?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhfDF8fHx8MTc1NjA2OTk1OXww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+      image: modernBusinessWebsite,
       features: ["Responsive Design", "SEO Optimized", "Fast Loading"],
-    },
-    {
-      title: "Mobile-First Platform",
-      description:
-        "Optimized for mobile users with seamless experience across all devices",
-      image:
-        "https://images.unsplash.com/photo-1490222939321-2a267366a124?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxidXNpbmVzcyUyMHdlYnNpdGUlMjBtb2JpbGV8ZW58MXx8fHwxNzU2MTUyOTY3fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-      features: ["Mobile Optimized", "Touch Friendly", "App-like Feel"],
-    },
-    {
-      title: "E-commerce Dashboard",
-      description:
-        "Powerful admin panel with analytics and inventory management",
-      image:
-        "https://images.unsplash.com/photo-1642132652860-471b4228023e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxlY29tbWVyY2UlMjB3ZWJzaXRlJTIwZGFzaGJvYXJkfGVufDF8fHx8MTc1NjA5OTYzOHww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-      features: [
-        "Real-time Analytics",
-        "Inventory Management",
-        "Payment Integration",
-      ],
+      url: "https://68af08a3e9a1fed5611c5f4c--fitcoachprofessional.netlify.app",
     },
   ];
 
@@ -225,37 +205,36 @@ export default function App() {
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-3 gap-8">
+          <div className="felx justify-center">
             {portfolioItems.map((item, index) => (
-              <Card
-                key={index}
-                className="overflow-hidden group hover:shadow-lg transition-all duration-300"
-              >
-                <div className="aspect-video overflow-hidden">
-                  <ImageWithFallback
-                    src={item.image}
-                    alt={item.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                  />
-                </div>
-                <CardHeader>
-                  <CardTitle>{item.title}</CardTitle>
-                  <CardDescription>{item.description}</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <div className="flex flex-wrap gap-2">
-                    {item.features.map((feature, featureIndex) => (
-                      <Badge
-                        key={featureIndex}
-                        variant="secondary"
-                        className="text-xs"
-                      >
-                        {feature}
-                      </Badge>
-                    ))}
+              <a href={item.url} key={index} target="_blank" className="max-w-2xl block">
+                <Card className="overflow-hidden group hover:shadow-lg transition-all duration-300">
+                  <div className="aspect-video overflow-hidden">
+                    <ImageWithFallback
+                      src={item.image}
+                      alt={item.title}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    />
                   </div>
-                </CardContent>
-              </Card>
+                  <CardHeader>
+                    <CardTitle>{item.title}</CardTitle>
+                    <CardDescription>{item.description}</CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="flex flex-wrap gap-2">
+                      {item.features.map((feature, featureIndex) => (
+                        <Badge
+                          key={featureIndex}
+                          variant="secondary"
+                          className="text-xs"
+                        >
+                          {feature}
+                        </Badge>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
+              </a>
             ))}
           </div>
         </div>
