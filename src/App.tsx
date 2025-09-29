@@ -1,4 +1,4 @@
-import { Button } from "./components/ui/button";
+import { Button } from "./components/ui/button"; // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import {
   Card,
   CardContent,
@@ -22,7 +22,6 @@ import {
   Brain,
   Clock,
 } from "lucide-react";
-import { title } from "process";
 
 export default function App() {
   const portfolioItems = [
@@ -56,7 +55,7 @@ export default function App() {
     },
   ];
 
-  const features = [
+  const features: { icon: any; title: string; description: string }[] = [
     {
       icon: <Brain className="h-6 w-6" />,
       title: "AI-Powered Development",
@@ -187,13 +186,13 @@ export default function App() {
                   <div className="mx-auto mb-4 p-3 rounded-lg bg-primary/10 text-primary w-fit">
                     {feature.icon}
                   </div>
-                  {feature.subtitle ? (
+                  {feature.description ? (
                     <>
                       <CardTitle className="text-lg text-red-600 mb-1">
                         {feature.title}
                       </CardTitle>
                       <CardTitle className="text-base text-muted-foreground">
-                        {feature.subtitle}
+                        {feature.description}
                       </CardTitle>
                     </>
                   ) : (
@@ -352,7 +351,7 @@ export default function App() {
               <CardContent>
                 <Button className="w-full" size="lg" asChild>
                   <a
-                    href="https://t.me/YOUR_TELEGRAM_USERNAME"
+                    href="https://t.me/Alexey_TheGreat"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -362,43 +361,6 @@ export default function App() {
                 </Button>
               </CardContent>
             </Card>
-
-            <Card className="p-8">
-              <CardHeader>
-                <CardTitle className="flex items-center gap-3 text-foreground">
-                  <Instagram className="h-6 w-6" />
-                  Order via Instagram
-                </CardTitle>
-                <CardDescription>
-                  Send me a DM on Instagram with your project details
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <Button className="w-full" size="lg" variant="outline" asChild>
-                  <a
-                    href="https://instagram.com/YOUR_INSTAGRAM_USERNAME"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <Instagram className="h-4 w-4 mr-2" />
-                    Message on Instagram
-                  </a>
-                </Button>
-              </CardContent>
-            </Card>
-          </div>
-
-          <div className="mt-12 p-6 bg-primary-foreground/10 rounded-lg max-w-md mx-auto">
-            <div className="flex items-center justify-center gap-3 mb-2">
-              <Mail className="h-5 w-5" />
-              <span>Email:</span>
-            </div>
-            <a
-              href="mailto:your.email@example.com"
-              className="text-lg hover:underline"
-            >
-              your.email@example.com
-            </a>
           </div>
 
           <p className="mt-8 text-primary-foreground/60">
