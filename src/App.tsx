@@ -205,7 +205,7 @@ export default function App() {
             </p>
           </div>
 
-          <div className="felx justify-center">
+          <div className="w-full flex justify-center">
             {portfolioItems.map((item, index) => (
               <a href={item.url} key={index} target="_blank" className="max-w-2xl block">
                 <Card className="overflow-hidden group hover:shadow-lg transition-all duration-300">
